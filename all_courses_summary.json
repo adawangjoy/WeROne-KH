@@ -138,6 +138,29 @@
     }
   },
   {
+    "course": "G情緒解碼與管理",
+    "total": 224,
+    "topRegion": {
+      "label": "南部",
+      "value": 145,
+      "share": "64.7%"
+    },
+    "topAge": {
+      "label": "國中（13-15歲）",
+      "count": 71
+    },
+    "gender": {
+      "male": 89,
+      "female": 135
+    },
+    "topDenomination": {
+      "label": "靈糧堂系統",
+      "value": 130,
+      "share": "58.0%",
+      "churchCount": 27
+    }
+  },
+  {
     "course": "H極限熱血對戰",
     "total": 80,
     "topRegion": {
