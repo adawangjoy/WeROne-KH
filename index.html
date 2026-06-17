@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>One(KH) 報名數據分析</title>
+  <style>
+    :root {
+      --ink: #1f2430;
+      --muted: #6f768a;
+      --line: #dfe3ec;
+      --soft: #f5f7fb;
+      --panel: #ffffff;
+      --orange: #cc6f47;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Microsoft JhengHei", "Noto Sans CJK TC", "Segoe UI", Arial, sans-serif;
+      color: var(--ink);
+      background: #fcfcfd;
+      line-height: 1.55;
+    }
+    .page {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 40px 24px 56px;
+    }
+    header {
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 24px;
+      margin-bottom: 28px;
+    }
+    h1 {
+      margin: 0 0 10px;
+      font-size: clamp(28px, 4vw, 44px);
+      line-height: 1.12;
+      letter-spacing: 0;
+    }
+    .subtitle {
+      color: var(--muted);
+      margin: 0;
+      font-size: 15px;
+    }
+    section {
+      margin: 34px 0;
+      padding-top: 2px;
+    }
+    h2 {
+      font-size: 24px;
+      margin: 0 0 12px;
+      letter-spacing: 0;
+    }
+    p { margin: 0 0 14px; }
+    .summary {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin: 22px 0 0;
+    }
+    .metric {
+      border: 1px solid var(--line);
+      background: var(--panel);
+      padding: 16px;
+      min-height: 112px;
+    }
+    .metric .label {
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 8px;
+    }
+    .metric .value {
+      font-size: 28px;
+      font-weight: 750;
+      line-height: 1.1;
+    }
+    .metric .note {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .callout {
+      border-left: 4px solid var(--orange);
+      background: #fff7f1;
+      padding: 14px 16px;
+      margin: 16px 0;
+    }
+    .chart-block {
+      border: 1px solid var(--line);
+      background: var(--panel);
+      padding: 10px;
+      margin: 16px 0;
+      overflow-x: auto;
+    }
+    .chart-svg {
+      display: block;
+      width: 100%;
+      min-width: 680px;
+      height: auto;
+    }
+    .grid-two {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(300px, 0.72fr);
+      gap: 18px;
+      align-items: start;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      margin: 14px 0;
+      background: var(--panel);
+    }
+    th, td {
+      border-bottom: 1px solid var(--line);
+      padding: 9px 10px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: #111827;
+      color: white;
+      font-weight: 700;
+    }
+    tr:nth-child(even) td { background: #f8fafc; }
+    .small {
+      color: var(--muted);
+      font-size: 13px;
+    }
+    details {
+      border: 1px solid var(--line);
+      background: var(--panel);
+      padding: 14px;
+    }
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+    }
+    .chart-title { font: 700 22px "Microsoft JhengHei", "Segoe UI", sans-serif; fill: #1f2430; }
+    .chart-subtitle { font: 14px "Microsoft JhengHei", "Segoe UI", sans-serif; fill: #6f768a; }
+    .label { font: 14px "Microsoft JhengHei", "Segoe UI", sans-serif; fill: #1f2430; }
+    .value { font: 700 13px "Consolas", "Microsoft JhengHei", monospace; fill: #1f2430; }
+    .tick { font: 12px "Consolas", monospace; fill: #6f768a; }
+    .grid { stroke: #e6e8f0; stroke-width: 1; stroke-dasharray: 4 5; }
+    .axis { stroke: #d7dbe7; stroke-width: 1.2; }
+    .donut-number { font: 800 34px "Consolas", monospace; fill: #1f2430; }
+    .donut-label { font: 14px "Microsoft JhengHei", "Segoe UI", sans-serif; fill: #6f768a; }
+    @media (max-width: 820px) {
+      .summary, .grid-two { grid-template-columns: 1fr; }
+      .page { padding: 28px 16px 44px; }
+      .metric { min-height: auto; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header>
+      <h1>One(KH) 報名數據分析</h1>
+      <p class="subtitle">來源檔：26 One(KH)_C跨界宣教無界限_數據分析0616.xlsx。分析基準為報名總人數 60 人。</p>
+      <div class="summary">
+        <div class="metric"><div class="label">總報名人數</div><div class="value">60 人</div><div class="note">三個工作表總計一致</div></div>
+        <div class="metric"><div class="label">最大區域</div><div class="value">南部</div><div class="note">43 人，71.7%</div></div>
+        <div class="metric"><div class="label">最大年齡層</div><div class="value">國中（13-15歲）</div><div class="note">14 人，23.3%</div></div>
+        <div class="metric"><div class="label">男女比</div><div class="value">男 19 / 女 41</div><div class="note">女生占 68.3%</div></div>
+      </div>
+    </header>
+
+    <section>
+      <h2>Executive Summary</h2>
+      <p><strong>報名來源高度集中在南部。</strong>五區整理後，南部共有 43 人，占 71.7%；其中台灣高雄市單一縣市就有 28 人，是目前最主要的觸及來源。</p>
+      <p><strong>年齡層以青少年為核心。</strong>國中與高中合計 27 人，占 45.0%；若活動重點含跨界宣教、培訓或小組陪伴，這兩群會直接影響課程深度與輔導人力配置。</p>
+      <p><strong>性別分布偏女性。</strong>女生 41 人，占 68.3%；男生 19 人，占 31.7%。後續若要提升男生參與，可針對招募管道或同儕邀請機制做更細的檢視。</p>
+      <p><strong>宗派/系統可做初步推估，但需要人工確認。</strong>依教會名稱關鍵字推估，靈糧堂系統 的報名人數最多，共 34 人，占 56.7%；這個分類不是原始欄位，建議作為初步洞察而非正式統計。</p>
+    </section>
+
+    <section>
+      <h2>地區：南部占絕對多數，交通與動員重心明確</h2>
+      <p>將縣市整理為北部、中部、南部、東部、海外/未填後，南部是壓倒性的主要來源。這代表宣傳和教會網絡目前在南部最有效，也意味著活動地點、住宿、交通與分組安排可以優先以南部參與者為基準設計，再為東部與中部參與者補足移動支持。</p>
+      <div class="chart-block"><svg class="chart-svg" viewBox="0 0 920 470" role="img" aria-label="五區人數分布">
+    <text x="54" y="30" class="chart-title">五區人數分布</text>
+    <text x="54" y="54" class="chart-subtitle">n=60；南部為主要來源，海外/未填包含原表「無」。</text>
+    <line x1="54" y1="396" x2="892" y2="396" class="grid"/><text x="42" y="400" text-anchor="end" class="tick">0</text><line x1="54" y1="312.8" x2="892" y2="312.8" class="grid"/><text x="42" y="316.8" text-anchor="end" class="tick">13</text><line x1="54" y1="236" x2="892" y2="236" class="grid"/><text x="42" y="240" text-anchor="end" class="tick">25</text><line x1="54" y1="152.8" x2="892" y2="152.8" class="grid"/><text x="42" y="156.8" text-anchor="end" class="tick">38</text><line x1="54" y1="76" x2="892" y2="76" class="grid"/><text x="42" y="80" text-anchor="end" class="tick">50</text>
+    <line x1="54" y1="396" x2="892" y2="396" class="axis"/>
+    <rect x="54" y="389.6" width="153.2" height="6.4" rx="4" fill="#5477C4"/><text x="130.6" y="379.6" text-anchor="middle" class="value">1 (1.7%)</text><text x="130.6" y="428" text-anchor="middle" class="label">北部</text><rect x="225.2" y="357.6" width="153.2" height="38.4" rx="4" fill="#71B436"/><text x="301.79999999999995" y="347.6" text-anchor="middle" class="value">6 (10.0%)</text><text x="301.79999999999995" y="428" text-anchor="middle" class="label">中部</text><rect x="396.4" y="120.80000000000001" width="153.2" height="275.2" rx="4" fill="#CC6F47"/><text x="473" y="110.80000000000001" text-anchor="middle" class="value">43 (71.7%)</text><text x="473" y="428" text-anchor="middle" class="label">南部</text><rect x="567.5999999999999" y="351.2" width="153.2" height="44.800000000000004" rx="4" fill="#BD569B"/><text x="644.1999999999999" y="341.2" text-anchor="middle" class="value">7 (11.7%)</text><text x="644.1999999999999" y="428" text-anchor="middle" class="label">東部</text><rect x="738.8" y="376.8" width="153.2" height="19.2" rx="4" fill="#7A828F"/><text x="815.4" y="366.8" text-anchor="middle" class="value">3 (5.0%)</text><text x="815.4" y="428" text-anchor="middle" class="label">海外/未填</text>
+  </svg></div>
+      <table><thead><tr><th>區域</th><th>人數</th><th>佔比</th></tr></thead><tbody><tr><td>北部</td><td>1</td><td>1.7%</td></tr><tr><td>中部</td><td>6</td><td>10.0%</td></tr><tr><td>南部</td><td>43</td><td>71.7%</td></tr><tr><td>東部</td><td>7</td><td>11.7%</td></tr><tr><td>海外/未填</td><td>3</td><td>5.0%</td></tr></tbody></table>
+    </section>
+
+    <section>
+      <h2>年齡：國中、高中是核心族群</h2>
+      <p>年齡層最高的是國中，其次是高中；兩者合計 27 人。這個結構適合把內容設計成「清楚、互動、多帶領」的形式：訊息不宜太抽象，見證、小組討論、回應時間與陪談安排會很重要。</p>
+      <div class="chart-block"><svg class="chart-svg" viewBox="0 0 920 450" role="img" aria-label="年齡層分布">
+    <text x="28" y="30" class="chart-title">年齡層分布</text>
+    <text x="28" y="54" class="chart-subtitle">國中與高中合計接近一半，是活動內容與輔導配置的核心族群。</text>
+    <text x="216" y="105" text-anchor="end" class="label">社青(51歲以上)</text>
+        <rect x="230" y="86" width="251.14285714285714" height="26" rx="4" fill="#A3BEFA" stroke="#2E4780" stroke-width="1"/>
+        <text x="489.1428571428571" y="104" class="value">6 (10.0%)</text><text x="216" y="147" text-anchor="end" class="label">社青(41歲-50歲)</text>
+        <rect x="230" y="128" width="209.28571428571428" height="26" rx="4" fill="#A3BEFA" stroke="#2E4780" stroke-width="1"/>
+        <text x="447.2857142857143" y="146" class="value">5 (8.3%)</text><text x="216" y="189" text-anchor="end" class="label">社青(31歲-40歲)</text>
+        <rect x="230" y="170" width="167.42857142857142" height="26" rx="4" fill="#A3BEFA" stroke="#2E4780" stroke-width="1"/>
+        <text x="405.42857142857144" y="188" class="value">4 (6.7%)</text><text x="216" y="231" text-anchor="end" class="label">社青(23歲-30歲)</text>
+        <rect x="230" y="212" width="376.7142857142857" height="26" rx="4" fill="#A3BEFA" stroke="#2E4780" stroke-width="1"/>
+        <text x="614.7142857142858" y="230" class="value">9 (15.0%)</text><text x="216" y="273" text-anchor="end" class="label">大專（19-22歲）</text>
+        <rect x="230" y="254" width="334.85714285714283" height="26" rx="4" fill="#A3BEFA" stroke="#2E4780" stroke-width="1"/>
+        <text x="572.8571428571429" y="272" class="value">8 (13.3%)</text><text x="216" y="315" text-anchor="end" class="label">高中（16-18歲）</text>
+        <rect x="230" y="296" width="544.1428571428571" height="26" rx="4" fill="#A3BEFA" stroke="#2E4780" stroke-width="1"/>
+        <text x="782.1428571428571" y="314" class="value">13 (21.7%)</text><text x="216" y="357" text-anchor="end" class="label">國中（13-15歲）</text>
+        <rect x="230" y="338" width="586" height="26" rx="4" fill="#A3BEFA" stroke="#2E4780" stroke-width="1"/>
+        <text x="824" y="356" class="value">14 (23.3%)</text><text x="216" y="399" text-anchor="end" class="label">國小（7-12歲）</text>
+        <rect x="230" y="380" width="41.857142857142854" height="26" rx="4" fill="#A3BEFA" stroke="#2E4780" stroke-width="1"/>
+        <text x="279.85714285714283" y="398" class="value">1 (1.7%)</text>
+  </svg></div>
+      <table><thead><tr><th>年齡層</th><th>人數</th><th>佔比</th></tr></thead><tbody><tr><td>（6歲以下）</td><td>0</td><td>0.0%</td></tr><tr><td>國小（7-12歲）</td><td>1</td><td>1.7%</td></tr><tr><td>國中（13-15歲）</td><td>14</td><td>23.3%</td></tr><tr><td>高中（16-18歲）</td><td>13</td><td>21.7%</td></tr><tr><td>大專（19-22歲）</td><td>8</td><td>13.3%</td></tr><tr><td>社青(23歲-30歲)</td><td>9</td><td>15.0%</td></tr><tr><td>社青(31歲-40歲)</td><td>4</td><td>6.7%</td></tr><tr><td>社青(41歲-50歲)</td><td>5</td><td>8.3%</td></tr><tr><td>社青(51歲以上)</td><td>6</td><td>10.0%</td></tr></tbody></table>
+    </section>
+
+    <section>
+      <h2>性別：女生占約三分之二</h2>
+      <p>女生 41 人、男生 19 人，性別分布明顯偏女性。這不一定是問題，但若團隊期待性別更平均，下一步可以回看各教會招募來源、同工邀請方式，以及是否有男生較容易投入的主題或小隊配置。</p>
+      <div class="grid-two">
+        <div class="chart-block"><svg class="chart-svg" viewBox="0 0 680 430" role="img" aria-label="男女比例">
+    <text x="28" y="30" class="chart-title">男女比例</text>
+    <text x="28" y="54" class="chart-subtitle">女生 41 人、男生 19 人；女生占 68.3%。</text>
+    <circle cx="228" cy="230" r="116" fill="none" stroke="#A3BEFA" stroke-width="46" stroke-dasharray="230.80234028373013 498.0471553491019" stroke-dashoffset="0" transform="rotate(-90 228 230)"/><circle cx="228" cy="230" r="116" fill="none" stroke="#F390CA" stroke-width="46" stroke-dasharray="498.0471553491019 230.80234028373013" stroke-dashoffset="-230.80234028373013" transform="rotate(-90 228 230)"/>
+    <circle cx="228" cy="230" r="78" fill="#fff"/>
+    <text x="228" y="224" text-anchor="middle" class="donut-number">60</text>
+    <text x="228" y="254" text-anchor="middle" class="donut-label">總人數</text>
+    <rect x="420" y="155" width="18" height="18" rx="3" fill="#A3BEFA"/><text x="448" y="170" class="label">男生 19人 (31.7%)</text><rect x="420" y="197" width="18" height="18" rx="3" fill="#F390CA"/><text x="448" y="212" class="label">女生 41人 (68.3%)</text>
+  </svg></div>
+        <div><table><thead><tr><th>性別</th><th>人數</th><th>佔比</th></tr></thead><tbody><tr><td>男生</td><td>19</td><td>31.7%</td></tr><tr><td>女生</td><td>41</td><td>68.3%</td></tr></tbody></table></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>教會系統/宗派：可以初步看出動員網絡，但要標註為推估</h2>
+      <p>原表沒有「宗派」欄位，因此我用教會名稱中的關鍵字做推估，例如「靈糧堂」、「長老教會」、「浸信」、「行道會」、「拿撒勒人會」等。這能幫你快速看見可能的教會網絡集中度，但正式使用前最好請承辦同工確認分類。</p>
+      <div class="callout"><strong>分類限制：</strong>「高雄New One靈糧堂」這類名稱可清楚歸入靈糧堂系統；但「未來父心教會」、「城市新頌教會」等若沒有宗派關鍵字，就先歸入「其他/獨立教會」。</div>
+      <div class="chart-block"><svg class="chart-svg" viewBox="0 0 920 492" role="img" aria-label="教會系統/宗派推估">
+    <text x="28" y="30" class="chart-title">教會系統/宗派推估</text>
+    <text x="28" y="54" class="chart-subtitle">依教會名稱關鍵字推估；正式發布前建議由同工確認。</text>
+    <text x="216" y="105" text-anchor="end" class="label">浸信會/浸信系統</text>
+        <rect x="230" y="86" width="17.235294117647058" height="26" rx="4" fill="#5477C4" stroke="#804126" stroke-width="1"/>
+        <text x="255.23529411764707" y="104" class="value">1 (1.7%)</text><text x="216" y="147" text-anchor="end" class="label">行道會</text>
+        <rect x="230" y="128" width="17.235294117647058" height="26" rx="4" fill="#CC6F47" stroke="#804126" stroke-width="1"/>
+        <text x="255.23529411764707" y="146" class="value">1 (1.7%)</text><text x="216" y="189" text-anchor="end" class="label">聖教會</text>
+        <rect x="230" y="170" width="17.235294117647058" height="26" rx="4" fill="#C5CAD3" stroke="#804126" stroke-width="1"/>
+        <text x="255.23529411764707" y="188" class="value">1 (1.7%)</text><text x="216" y="231" text-anchor="end" class="label">浸信宣道會</text>
+        <rect x="230" y="212" width="17.235294117647058" height="26" rx="4" fill="#7A828F" stroke="#804126" stroke-width="1"/>
+        <text x="255.23529411764707" y="230" class="value">1 (1.7%)</text><text x="216" y="273" text-anchor="end" class="label">拿撒勒人會</text>
+        <rect x="230" y="254" width="34.470588235294116" height="26" rx="4" fill="#BD569B" stroke="#804126" stroke-width="1"/>
+        <text x="272.47058823529414" y="272" class="value">2 (3.3%)</text><text x="216" y="315" text-anchor="end" class="label">未填</text>
+        <rect x="230" y="296" width="51.70588235294118" height="26" rx="4" fill="#B8A037" stroke="#804126" stroke-width="1"/>
+        <text x="289.70588235294116" y="314" class="value">3 (5.0%)</text><text x="216" y="357" text-anchor="end" class="label">長老教會</text>
+        <rect x="230" y="338" width="86.17647058823529" height="26" rx="4" fill="#71B436" stroke="#804126" stroke-width="1"/>
+        <text x="324.1764705882353" y="356" class="value">5 (8.3%)</text><text x="216" y="399" text-anchor="end" class="label">其他/獨立教會</text>
+        <rect x="230" y="380" width="206.82352941176472" height="26" rx="4" fill="#5477C4" stroke="#804126" stroke-width="1"/>
+        <text x="444.82352941176475" y="398" class="value">12 (20.0%)</text><text x="216" y="441" text-anchor="end" class="label">靈糧堂系統</text>
+        <rect x="230" y="422" width="586" height="26" rx="4" fill="#CC6F47" stroke="#804126" stroke-width="1"/>
+        <text x="824" y="440" class="value">34 (56.7%)</text>
+  </svg></div>
+      <table><thead><tr><th>宗派/系統</th><th>人數</th><th>佔比</th><th>教會數</th></tr></thead><tbody><tr><td>靈糧堂系統</td><td>34</td><td>56.7%</td><td>17</td></tr><tr><td>其他/獨立教會</td><td>12</td><td>20.0%</td><td>7</td></tr><tr><td>長老教會</td><td>5</td><td>8.3%</td><td>1</td></tr><tr><td>未填</td><td>3</td><td>5.0%</td><td>1</td></tr><tr><td>拿撒勒人會</td><td>2</td><td>3.3%</td><td>1</td></tr><tr><td>浸信宣道會</td><td>1</td><td>1.7%</td><td>1</td></tr><tr><td>聖教會</td><td>1</td><td>1.7%</td><td>1</td></tr><tr><td>行道會</td><td>1</td><td>1.7%</td><td>1</td></tr><tr><td>浸信會/浸信系統</td><td>1</td><td>1.7%</td><td>1</td></tr></tbody></table>
+    </section>
+
+    <section>
+      <h2>還可以延伸看的分析項目</h2>
+      <p><strong>縣市集中度。</strong>除了五區，縣市排名能更直接回答「主要從哪裡來」。目前高雄市是最大來源，值得單獨看作核心動員區。</p>
+      <div class="chart-block"><svg class="chart-svg" viewBox="0 0 920 534" role="img" aria-label="縣市來源排名">
+    <text x="28" y="30" class="chart-title">縣市來源排名</text>
+    <text x="28" y="54" class="chart-subtitle">高雄市占最大宗，可用於判斷招生觸及與交通安排。</text>
+    <text x="216" y="105" text-anchor="end" class="label">台灣臺北市</text>
+        <rect x="230" y="86" width="20.928571428571427" height="26" rx="4" fill="#A3D576" stroke="#386411" stroke-width="1"/>
+        <text x="258.92857142857144" y="104" class="value">1</text><text x="216" y="147" text-anchor="end" class="label">台灣嘉義縣</text>
+        <rect x="230" y="128" width="20.928571428571427" height="26" rx="4" fill="#A3D576" stroke="#386411" stroke-width="1"/>
+        <text x="258.92857142857144" y="146" class="value">1</text><text x="216" y="189" text-anchor="end" class="label">台灣雲林縣</text>
+        <rect x="230" y="170" width="20.928571428571427" height="26" rx="4" fill="#A3D576" stroke="#386411" stroke-width="1"/>
+        <text x="258.92857142857144" y="188" class="value">1</text><text x="216" y="231" text-anchor="end" class="label">台灣臺中市</text>
+        <rect x="230" y="212" width="41.857142857142854" height="26" rx="4" fill="#A3D576" stroke="#386411" stroke-width="1"/>
+        <text x="279.85714285714283" y="230" class="value">2</text><text x="216" y="273" text-anchor="end" class="label">無</text>
+        <rect x="230" y="254" width="62.785714285714285" height="26" rx="4" fill="#A3D576" stroke="#386411" stroke-width="1"/>
+        <text x="300.7857142857143" y="272" class="value">3</text><text x="216" y="315" text-anchor="end" class="label">台灣南投縣</text>
+        <rect x="230" y="296" width="62.785714285714285" height="26" rx="4" fill="#A3D576" stroke="#386411" stroke-width="1"/>
+        <text x="300.7857142857143" y="314" class="value">3</text><text x="216" y="357" text-anchor="end" class="label">台灣臺南市</text>
+        <rect x="230" y="338" width="104.64285714285714" height="26" rx="4" fill="#A3D576" stroke="#386411" stroke-width="1"/>
+        <text x="342.6428571428571" y="356" class="value">5</text><text x="216" y="399" text-anchor="end" class="label">台灣臺東縣</text>
+        <rect x="230" y="380" width="146.5" height="26" rx="4" fill="#A3D576" stroke="#386411" stroke-width="1"/>
+        <text x="384.5" y="398" class="value">7</text><text x="216" y="441" text-anchor="end" class="label">台灣屏東縣</text>
+        <rect x="230" y="422" width="188.35714285714286" height="26" rx="4" fill="#A3D576" stroke="#386411" stroke-width="1"/>
+        <text x="426.3571428571429" y="440" class="value">9</text><text x="216" y="483" text-anchor="end" class="label">台灣高雄市</text>
+        <rect x="230" y="464" width="586" height="26" rx="4" fill="#A3D576" stroke="#386411" stroke-width="1"/>
+        <text x="824" y="482" class="value">28</text>
+  </svg></div>
+      <p><strong>教會集中度。</strong>可以看前幾個教會貢獻了多少人，判斷是否仰賴少數教會動員。若未來要擴大報名，這能幫助找出應該加強連結的空白區域或教會系統。</p>
+      <table><thead><tr><th>教會</th><th>地區</th><th>人數</th><th>宗派/系統推估</th></tr></thead><tbody><tr><td>台灣基督長老教會右昌教會</td><td>台灣高雄市</td><td>5</td><td>長老教會</td></tr><tr><td>高雄愛加倍恩惠靈糧堂</td><td>台灣高雄市</td><td>5</td><td>靈糧堂系統</td></tr><tr><td>台東靈糧堂</td><td>台灣臺東縣</td><td>3</td><td>靈糧堂系統</td></tr><tr><td>佳冬活泉靈糧堂</td><td>台灣屏東縣</td><td>3</td><td>靈糧堂系統</td></tr><tr><td>高雄New One靈糧堂</td><td>台灣高雄市</td><td>3</td><td>靈糧堂系統</td></tr><tr><td>高雄福氣教會</td><td>台灣高雄市</td><td>3</td><td>其他/獨立教會</td></tr><tr><td>無</td><td>無</td><td>3</td><td>未填</td></tr><tr><td>AFCC台東興起先鋒教會</td><td>台灣臺東縣</td><td>2</td><td>其他/獨立教會</td></tr></tbody></table>
+      <p><strong>交叉分析。</strong>目前原始檔只有彙總表，無法直接做「年齡 × 地區」、「性別 × 教會」、「宗派 × 年齡」這類交叉表。如果有原始報名名單，最有價值的下一步會是做這些交叉分析，因為它們能回答不同區域或教會系統是否服務到不同族群。</p>
+    </section>
+
+    <section>
+      <h2>假設與注意事項</h2>
+      <p class="small">1. 地區分類依台灣常見分區整理：北部、中部、南部、東部；原表「無」歸入「海外/未填」。</p>
+      <p class="small">2. 宗派/系統分類為依教會名稱關鍵字推估，不是原始欄位；若要正式發布，建議由熟悉教會背景的同工人工校對。</p>
+      <p class="small">3. 年齡與性別目前只能使用原表彙總，不能與地區、教會或宗派做交叉分析。</p>
+      <details>
+        <summary>宗派/系統推估明細</summary>
+        <table><thead><tr><th>教會</th><th>推估宗派/系統</th><th>推估依據</th><th>人數</th></tr></thead><tbody><tr><td>無</td><td>未填</td><td>教會名稱未填或填寫為「無」</td><td>3</td></tr><tr><td>卓越東港行道會</td><td>行道會</td><td>名稱含「行道會」</td><td>1</td></tr><tr><td>高雄福氣教會</td><td>其他/獨立教會</td><td>名稱未含主要宗派關鍵字</td><td>3</td></tr><tr><td>AFCC台東興起先鋒教會</td><td>其他/獨立教會</td><td>名稱未含主要宗派關鍵字</td><td>2</td></tr><tr><td>南興得勝教會</td><td>其他/獨立教會</td><td>名稱未含主要宗派關鍵字</td><td>2</td></tr><tr><td>崑山教會</td><td>其他/獨立教會</td><td>名稱未含主要宗派關鍵字</td><td>2</td></tr><tr><td>The Future 高雄市未來父心教會</td><td>其他/獨立教會</td><td>名稱未含主要宗派關鍵字</td><td>1</td></tr><tr><td>東港約珥靈糧褔音中心</td><td>其他/獨立教會</td><td>名稱未含主要宗派關鍵字</td><td>1</td></tr><tr><td>城市新頌教會</td><td>其他/獨立教會</td><td>名稱未含主要宗派關鍵字</td><td>1</td></tr><tr><td>台灣基督長老教會右昌教會</td><td>長老教會</td><td>名稱含「長老教會」</td><td>5</td></tr><tr><td>拿撒勒人會南和教會</td><td>拿撒勒人會</td><td>名稱含「拿撒勒人會」</td><td>2</td></tr><tr><td>中華浸信宣道會朴子恩典中心</td><td>浸信宣道會</td><td>名稱含「浸信宣道會」</td><td>1</td></tr><tr><td>福德浸信會</td><td>浸信會/浸信系統</td><td>名稱含「浸信」</td><td>1</td></tr><tr><td>世界之光聖教會</td><td>聖教會</td><td>名稱含「聖教會」</td><td>1</td></tr><tr><td>高雄愛加倍恩惠靈糧堂</td><td>靈糧堂系統</td><td>名稱含「靈糧堂」</td><td>5</td></tr><tr><td>台東靈糧堂</td><td>靈糧堂系統</td><td>名稱含「靈糧堂」</td><td>3</td></tr><tr><td>佳冬活泉靈糧堂</td><td>靈糧堂系統</td><td>名稱含「靈糧堂」</td><td>3</td></tr><tr><td>高雄New One靈糧堂</td><td>靈糧堂系統</td><td>名稱含「靈糧堂」</td><td>3</td></tr><tr><td>台中東海靈糧堂</td><td>靈糧堂系統</td><td>名稱含「靈糧堂」</td><td>2</td></tr><tr><td>安南靈糧堂</td><td>靈糧堂系統</td><td>名稱含「靈糧堂」</td><td>2</td></tr><tr><td>林園活泉靈糧堂</td><td>靈糧堂系統</td><td>名稱含「靈糧堂」</td><td>2</td></tr><tr><td>前山第一城靈糧堂</td><td>靈糧堂系統</td><td>名稱含「靈糧堂」</td><td>2</td></tr><tr><td>高雄約珥靈糧堂</td><td>靈糧堂系統</td><td>名稱含「靈糧堂」</td><td>2</td></tr><tr><td>高雄新生命靈糧堂</td><td>靈糧堂系統</td><td>名稱含「靈糧堂」</td><td>2</td></tr><tr><td>鳳山活泉靈糧堂</td><td>靈糧堂系統</td><td>名稱含「靈糧堂」</td><td>2</td></tr><tr><td>水門靈糧堂</td><td>靈糧堂系統</td><td>名稱含「靈糧堂」</td><td>1</td></tr><tr><td>台北靈糧堂北區會堂</td><td>靈糧堂系統</td><td>名稱含「靈糧堂」</td><td>1</td></tr><tr><td>恆春活泉靈糧堂</td><td>靈糧堂系統</td><td>名稱含「靈糧堂」</td><td>1</td></tr><tr><td>埔里生命之道靈糧堂</td><td>靈糧堂系統</td><td>名稱含「靈糧堂」</td><td>1</td></tr><tr><td>雲林611靈糧堂</td><td>靈糧堂系統</td><td>名稱含「靈糧堂」</td><td>1</td></tr><tr><td>新曙光靈糧堂</td><td>靈糧堂系統</td><td>名稱含「靈糧堂」</td><td>1</td></tr></tbody></table>
+      </details>
+    </section>
+  </main>
+</body>
+</html>
