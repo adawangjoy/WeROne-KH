@@ -92,6 +92,29 @@
     }
   },
   {
+    "course": "E神國領袖特訓班",
+    "total": 43,
+    "topRegion": {
+      "label": "南部",
+      "value": 29,
+      "share": "67.4%"
+    },
+    "topAge": {
+      "label": "社青(31歲-40歲)",
+      "count": 14
+    },
+    "gender": {
+      "male": 17,
+      "female": 26
+    },
+    "topDenomination": {
+      "label": "其他/獨立教會",
+      "value": 20,
+      "share": "46.5%",
+      "churchCount": 12
+    }
+  },
+  {
     "course": "F不暈船戀愛指南",
     "total": 168,
     "topRegion": {
