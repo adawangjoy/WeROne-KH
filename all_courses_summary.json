@@ -1,0 +1,163 @@
+[
+  {
+    "course": "A福音創意發電機",
+    "total": 85,
+    "topRegion": {
+      "label": "南部",
+      "value": 52,
+      "share": "61.2%"
+    },
+    "topAge": {
+      "label": "大專（19-22歲）",
+      "count": 15
+    },
+    "gender": {
+      "male": 37,
+      "female": 48
+    },
+    "topDenomination": {
+      "label": "靈糧堂系統",
+      "value": 62,
+      "share": "72.9%",
+      "churchCount": 18
+    }
+  },
+  {
+    "course": "B敬拜團隊工作坊",
+    "total": 145,
+    "topRegion": {
+      "label": "南部",
+      "value": 101,
+      "share": "69.7%"
+    },
+    "topAge": {
+      "label": "高中（16-18歲）",
+      "count": 34
+    },
+    "gender": {
+      "male": 65,
+      "female": 80
+    },
+    "topDenomination": {
+      "label": "靈糧堂系統",
+      "value": 62,
+      "share": "42.8%",
+      "churchCount": 17
+    }
+  },
+  {
+    "course": "C跨界宣教無界限",
+    "total": 60,
+    "topRegion": {
+      "label": "南部",
+      "value": 43,
+      "share": "71.7%"
+    },
+    "topAge": {
+      "label": "國中（13-15歲）",
+      "count": 14
+    },
+    "gender": {
+      "male": 19,
+      "female": 41
+    },
+    "topDenomination": {
+      "label": "靈糧堂系統",
+      "value": 34,
+      "share": "56.7%",
+      "churchCount": 17
+    }
+  },
+  {
+    "course": "D神連線的禱告祭壇",
+    "total": 84,
+    "topRegion": {
+      "label": "南部",
+      "value": 57,
+      "share": "67.9%"
+    },
+    "topAge": {
+      "label": "社青(23歲-30歲)",
+      "count": 20
+    },
+    "gender": {
+      "male": 34,
+      "female": 50
+    },
+    "topDenomination": {
+      "label": "靈糧堂系統",
+      "value": 62,
+      "share": "73.8%",
+      "churchCount": 17
+    }
+  },
+  {
+    "course": "F不暈船戀愛指南",
+    "total": 168,
+    "topRegion": {
+      "label": "南部",
+      "value": 115,
+      "share": "68.5%"
+    },
+    "topAge": {
+      "label": "高中（16-18歲）",
+      "count": 51
+    },
+    "gender": {
+      "male": 82,
+      "female": 86
+    },
+    "topDenomination": {
+      "label": "靈糧堂系統",
+      "value": 91,
+      "share": "54.2%",
+      "churchCount": 24
+    }
+  },
+  {
+    "course": "H極限熱血對戰",
+    "total": 80,
+    "topRegion": {
+      "label": "南部",
+      "value": 59,
+      "share": "73.8%"
+    },
+    "topAge": {
+      "label": "國中（13-15歲）",
+      "count": 31
+    },
+    "gender": {
+      "male": 54,
+      "female": 26
+    },
+    "topDenomination": {
+      "label": "靈糧堂系統",
+      "value": 55,
+      "share": "68.8%",
+      "churchCount": 12
+    }
+  },
+  {
+    "course": "I多巴胺街舞青春",
+    "total": 44,
+    "topRegion": {
+      "label": "南部",
+      "value": 37,
+      "share": "84.1%"
+    },
+    "topAge": {
+      "label": "國中（13-15歲）",
+      "count": 11
+    },
+    "gender": {
+      "male": 6,
+      "female": 38
+    },
+    "topDenomination": {
+      "label": "靈糧堂系統",
+      "value": 25,
+      "share": "56.8%",
+      "churchCount": 11
+    }
+  }
+]
