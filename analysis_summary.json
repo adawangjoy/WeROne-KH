@@ -1,0 +1,188 @@
+{
+  "total": 60,
+  "regions": [
+    {
+      "label": "北部",
+      "value": 1,
+      "share": "1.7%"
+    },
+    {
+      "label": "中部",
+      "value": 6,
+      "share": "10.0%"
+    },
+    {
+      "label": "南部",
+      "value": 43,
+      "share": "71.7%"
+    },
+    {
+      "label": "東部",
+      "value": 7,
+      "share": "11.7%"
+    },
+    {
+      "label": "海外/未填",
+      "value": 3,
+      "share": "5.0%"
+    }
+  ],
+  "age": [
+    {
+      "label": "（6歲以下）",
+      "count": 0
+    },
+    {
+      "label": "國小（7-12歲）",
+      "count": 1
+    },
+    {
+      "label": "國中（13-15歲）",
+      "count": 14
+    },
+    {
+      "label": "高中（16-18歲）",
+      "count": 13
+    },
+    {
+      "label": "大專（19-22歲）",
+      "count": 8
+    },
+    {
+      "label": "社青(23歲-30歲)",
+      "count": 9
+    },
+    {
+      "label": "社青(31歲-40歲)",
+      "count": 4
+    },
+    {
+      "label": "社青(41歲-50歲)",
+      "count": 5
+    },
+    {
+      "label": "社青(51歲以上)",
+      "count": 6
+    }
+  ],
+  "gender": [
+    {
+      "label": "男生",
+      "value": 19,
+      "share": "31.7%"
+    },
+    {
+      "label": "女生",
+      "value": 41,
+      "share": "68.3%"
+    }
+  ],
+  "denominations": [
+    {
+      "label": "靈糧堂系統",
+      "value": 34,
+      "share": "56.7%",
+      "churchCount": 17
+    },
+    {
+      "label": "其他/獨立教會",
+      "value": 12,
+      "share": "20.0%",
+      "churchCount": 7
+    },
+    {
+      "label": "長老教會",
+      "value": 5,
+      "share": "8.3%",
+      "churchCount": 1
+    },
+    {
+      "label": "未填",
+      "value": 3,
+      "share": "5.0%",
+      "churchCount": 1
+    },
+    {
+      "label": "拿撒勒人會",
+      "value": 2,
+      "share": "3.3%",
+      "churchCount": 1
+    },
+    {
+      "label": "浸信宣道會",
+      "value": 1,
+      "share": "1.7%",
+      "churchCount": 1
+    },
+    {
+      "label": "聖教會",
+      "value": 1,
+      "share": "1.7%",
+      "churchCount": 1
+    },
+    {
+      "label": "行道會",
+      "value": 1,
+      "share": "1.7%",
+      "churchCount": 1
+    },
+    {
+      "label": "浸信會/浸信系統",
+      "value": 1,
+      "share": "1.7%",
+      "churchCount": 1
+    }
+  ],
+  "cities": [
+    {
+      "city": "台灣高雄市",
+      "count": 28,
+      "region": "南部"
+    },
+    {
+      "city": "台灣屏東縣",
+      "count": 9,
+      "region": "南部"
+    },
+    {
+      "city": "台灣臺東縣",
+      "count": 7,
+      "region": "東部"
+    },
+    {
+      "city": "台灣臺南市",
+      "count": 5,
+      "region": "南部"
+    },
+    {
+      "city": "台灣南投縣",
+      "count": 3,
+      "region": "中部"
+    },
+    {
+      "city": "無",
+      "count": 3,
+      "region": "海外/未填"
+    },
+    {
+      "city": "台灣臺中市",
+      "count": 2,
+      "region": "中部"
+    },
+    {
+      "city": "台灣雲林縣",
+      "count": 1,
+      "region": "中部"
+    },
+    {
+      "city": "台灣嘉義縣",
+      "count": 1,
+      "region": "南部"
+    },
+    {
+      "city": "台灣臺北市",
+      "count": 1,
+      "region": "北部"
+    }
+  ]
+}
